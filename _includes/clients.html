@@ -12,11 +12,142 @@
                     <p>A CLI written in ruby is the reference implementation, but we hope there will be plenty of other implementations in other languages.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Currently only the CLI is supported, but a webinterface written in dart is in the pipeline.</p>
+                    <p>Currently only the CLI is supported, and a webinterface written in dart is in the pipeline.</p>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                  <pre style="margin-top: 15px;"><code>
+$ duse config
+Uri to the duse instance you want to use: https://myduseinstance.com/
+
+$ duse register
+Username: flower-pot
+Email: fbranczyk@gmail.com
+Password: xxxxxxxx
+Confirm password: xxxxxxxx
+
+Which private ssh-key do you want to use?
+1. /Users/fredericbranczyk/.ssh/id_rsa
+2. Generate a new one
+3. Let me choose it myself
+Select by entering the number.
+1
+
+Successfully created your account! An email to confirm it has been sent. Once confirmed you can login with "duse login"
+                  </pre></code>
+
+                  <p>Then confirm the account with the instructions sent in the email.</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse account confirm --token &lt;your-token&gt;
+
+$ duse login
+Username: flower-pot
+Password: xxxxxxxx
+Successfully logged in!
+                  </pre></code>
+
+                  <p>Now that you are registered and logged in, the real fun can begin.</p>
+                  <p>The CLI is self explanatory in what it can do.</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse
+
+Usage: duse COMMAND ...
+
+Available commands:
+
+  account        Manage your account
+  config         Configure the client
+  help           Displays help messages, such as this one
+  login          login to access and save secrets
+  register       Register a new account
+  secret         Save, retrieve and delete secrets
+  version        print the client version
+
+run `duse help COMMAND` for more infos
+                  </pre></code>
+
+                  <p>Let's take a look at what we can do with secrets.</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse help secret
+
+Save, retrieve and delete secrets
+
+Usage: duse secret COMMAND ...
+
+Available commands:
+
+  add            Interactively create a new secret, or set values via options
+  get            Retrieve a secret
+  list           List all secrets you have access to
+  remove         Delete a secret
+  update         Save a new secret
+
+run `duse help secret COMMAND` for more infos
+                  </pre></code>
+
+                  <p>Add a new secret</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse secret add
+
+What do you want to call this secret? MySecret
+Secret to save: MySecretContent
+Do you want to share this secret?[y/n] n
+Secret successfully created!
+                  </pre></code>
+
+                  <p>And retrieve the secret interactively</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse secret get
+
+1: MySecret
+
+Select the id of the secret to retrieve: 1
+
+Name:   MySecret
+Secret: MySecretContent
+Access: fbranczyk
+                  </pre></code>
+
+                  <p>Or directly if you already know the secrets id</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse secret get 1
+
+Name:   MySecret
+Secret: MySecretContent
+Access: fbranczyk
+                  </pre></code>
+
+                  <p>We can also just print the secret plain</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse secret get 1 --plain
+MySecretContent
+                  </pre></code>
+
+                  <p>This allows us to pipe the secret or use it in environment variables</p>
+
+                  <pre style="margin-top: 15px;"><code>
+$ duse secret get 1 --plain | xclip -sel c -i # linux copy to clipboard
+
+$ duse secret get 1 --plain | pbcopy # osx copy to clipboard
+
+$ ENV_VAR=$(duse secret get 1 --plain) # set environment variable
+                  </pre></code>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+                <p class="text-center">For further example</p>
+
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="https://github.com/duse-io/duse.rb#the-client" class="btn btn-lg btn-success">
-                        <i class="fa fa-github"></i> Find out how to use the CLI
+                        <i class="fa fa-github"></i> Check out the CLI Documentation
                     </a>
                 </div>
             </div>
