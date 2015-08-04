@@ -1,3 +1,381 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+    <!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap Material</title>
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="css/material/roboto.css" rel="stylesheet">
+        <link href="css/material/material-fullpalette.css" rel="stylesheet">
+        <link href="css/material/ripples.css" rel="stylesheet">
+		<link href="css/scrolling-nav/scrolling-nav.css" rel="stylesheet">
+		<link href="css/duse/duse.css" rel="stylesheet">
+		<link href="css/font-awesome/font-awesome.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+	
+		<div class="navbar navbar-default">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><i class="mdi-action-lock" style="font-size:28px"></i><span> Duse.io</span></a>
+			</div>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">			
+				<form class="navbar-form navbar-left">
+					<input type="text" class="form-control col-lg-8" placeholder="Search">
+				</form>
+				<ul class="nav navbar-nav">
+					<li><a href="./account.html">Your Account</a></li>
+					<li><a href="./safe.html">Your Safe</a></li>
+				</ul>
+				<div class="nav navbar-nav navbar-right">				
+					<a href="./register.html" class="btn btn-warning btn-raised">Register</a>
+					<a href="./login.html" class="btn btn-success btn-raised">Login</a>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="container big theme-showcase" role="main">
+			<div id="mainheader">
+				<div id="mainheaderfoto">
+					<div class="container theme-showcase">
+						<div class="mainheadertexttable">
+							<div class="mainheadertext">
+								<h1>Never use a stormtrooper again</h1>
+								<h2>to transmit passwords securely!</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container theme-showcase" role="main">
+			<div class="row">
+			  <div class="col-sm-3">
+				<div id="sidebar-wrap" class="hidden-xs">
+					<div class="sidebar-nav card" id="sidebar">
+					  <div class="navbar" role="navigation">
+						<div class="navbar-header">
+						  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <span class="visible-xs navbar-brand">Sidebar menu</span>
+						</div>
+						<div class="navbar-collapse collapse sidebar-navbar-collapse">
+						  <ul class="nav navbar-nav">
+							<li class="active"><a href="./"><b>Sidemenu</b></a></li>
+						<li class="hidden">
+							<a class="page-scroll" href="#page-top"></a>
+						</li>
+						<li>
+							<a class="page-scroll" href="#about">About</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="#setup">Setup your own</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="#clients">Clients</a>
+						</li>
+						  </ul>
+						</div><!--/.nav-collapse -->
+					  </div>
+					</div>
+				</div>
+			  </div>
+			  <div class="col-sm-9 maincontent">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<h1><i class="mdi-action-lock" style="font-size:36px"></i> Duse.io</h1>
+							<hr>
+						</div>
+					</div>
+					<div class="row row-space">
+						<div class="col-lg-6">
+							<div class="card">
+								<div class="card-height-indicator"></div>
+								<div class="card-content">
+									<div class="card-image">
+										<img src="./images/green_lock.jpg" alt="Loading image...">
+										<h3 class="card-image-headline">Security</h3>
+									</div>
+									<div class="card-body">
+										<p>Duse uses well established encryption algorithms combined to securely share your secrets.</p>
+									</div>
+									<footer class="card-footer">
+										<a href="#about" class="page-scroll btn btn-flat btn-success">Lern more</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card">
+								<div class="card-height-indicator"></div>
+								<div class="card-content">
+									<div class="card-image">
+										<img src="./images/share.jpg" alt="Loading image...">
+										<h3 class="card-image-headline">RESTful API</h3>
+									</div>
+									<div class="card-body">
+										<p>We have developed a RESTful API to distribute your secrets securely. It can easily be setup on Heroku or using Docker.</p>
+									</div>
+									<footer class="card-footer">
+										<a href="#setup" class="page-scroll btn btn-flat btn-success">Lern more</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="row row-space-big">
+						<div class="col-lg-12">
+							<h2 id="about">About</h2>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<p>
+							Use Duse to share secrets with coworkers or friends. Duse uses well established encryption algorithms combined to securely share your secrets. During the whole process the server is not able to decrypt the secret, only participants are able to do so.
+							</p>
+						</div>
+						<div class="col-lg-6">
+							<p>
+							The combination of the used algorithms, or the cryptographic protocol, is open and we are happy to discuss improvements with you. The cryptographic protocol is documented on GitHub. This is a preview, we incourage you to check it out and improve it with us!
+							</p>
+						</div>
+					</div>	
+					<div class="row row-space-big">
+						<div class="col-lg-12">
+							<h2 id="setup">Setup your own</h2>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<p>
+								We have developed a RESTful API to distribute your secrets securely. It can easily be setup on Heroku or using Docker. <br>
+							</p>
+						</div>
+						<div class="col-lg-6">
+							<p>
+								Go ahead and setup your own instance on Heroku or manually setup one. We've prepared easy to follow setup guides for you. <br>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-5 text-right">
+							<a href="https://heroku.com/deploy?template=https://github.com/duse-io/api" class="btn btn-primary btn-raised"><i class="fa fa-cloud-upload"></i> Deploy to Heroku </a>
+						</div>
+						<div class="col-lg-2 text-center col-center">
+							or
+						</div>
+						<div class="col-lg-5">
+							<a href="https://github.com/duse-io/setup" class="btn btn-success btn-raised"><i class="fa fa-github"></i> Setup Instructions</a>							
+						</div>
+					</div>	
+					<div class="row row-space-big">
+						<div class="col-lg-12">
+							<h2 id="clients">Clients</h2>
+							<hr>
+						</div>
+					</div>				
+					<div class="row">
+						<div class="col-lg-6">
+							<p>A CLI and library written in ruby is the reference implementation, but we hope there will be plenty of other implementations in other languages.</p>
+						</div>
+						<div class="col-lg-6">
+							<p>Currently only the CLI is supported, and a currently highly experimental webinterface written in dart is in the pipeline.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+						  <pre style="margin-top: 15px;">
+# install the CLI
+$ gem install duse
+
+$ duse config
+Uri to the duse instance you want to use: https://myduseinstance.com/
+
+$ duse register
+Username: flower-pot
+Email: fbranczyk@gmail.com
+Password: xxxxxxxx
+Confirm password: xxxxxxxx
+
+Which private ssh-key do you want to use?
+1. /Users/fredericbranczyk/.ssh/id_rsa
+2. Generate a new one
+3. Let me choose it myself
+Select by entering the number.
+1
+
+Successfully created your account! An email to confirm it has been sent. Once confirmed you can login with "duse login"</pre>                 
+
+						  <p>Then confirm the account with the instructions sent in the email.</p>
+
+						  <pre style="margin-top: 15px;">
+$ duse account confirm &lt;your-token&gt;
+
+$ duse login
+Username: flower-pot
+Password: xxxxxxxx
+Successfully logged in!</pre>							  
+
+						  <p>Now that you are registered and logged in, the real fun can begin.</p>
+						  <p>The CLI is self explanatory in what it can do.</p>
+
+						  <pre style="margin-top: 15px;">
+$ duse
+
+Usage: duse COMMAND ...
+
+Available commands:
+
+account        Manage your account
+config         Configure the client
+help           Displays help messages, such as this one
+login          login to access and save secrets
+register       Register a new account
+secret         Save, retrieve and delete secrets
+version        print the client version
+
+run `duse help COMMAND` for more infos
+							  </pre>
+
+							  <p>Let's take a look at what we can do with secrets.</p>
+
+							  <pre style="margin-top: 15px;">
+$ duse help secret
+
+Save, retrieve and delete secrets
+
+Usage: duse secret COMMAND ...
+
+Available commands:
+
+add            Interactively create a new secret, or set values via options
+get            Retrieve a secret
+list           List all secrets you have access to
+remove         Delete a secret
+update         Save a new secret
+
+run `duse help secret COMMAND` for more infos
+							  </pre>
+
+							  <p>Add a new secret</p>
+
+							  <pre style="margin-top: 15px;">
+$ duse secret add
+
+What do you want to call this secret? MySecret
+Secret to save: MySecretContent
+Do you want to share this secret?[y/n] n
+Secret successfully created!
+							  </pre>
+
+							  <p>And retrieve the secret interactively</p>
+
+							  <pre style="margin-top: 15px;">
+$ duse secret get
+
+1: MySecret
+
+Select the id of the secret to retrieve: 1
+
+Name:   MySecret
+Secret: MySecretContent
+Access: flower-pot
+							  </pre>
+
+							  <p>Or directly if you already know the secrets id</p>
+
+							  <pre style="margin-top: 15px;">
+$ duse secret get 1
+
+Name:   MySecret
+Secret: MySecretContent
+Access: flower-pot
+							  </pre>
+
+							  <p>We can also just print the secret plain</p>
+
+							  <pre style="margin-top: 15px;">
+$ duse secret get 1 --plain
+MySecretContent
+							  </pre>
+
+							  <p>This allows us to pipe the secret or use it in environment variables</p>
+
+							  <pre style="margin-top: 15px;">
+$ duse secret get 1 --plain | xclip -sel c -i # linux copy to clipboard
+
+$ duse secret get 1 --plain | pbcopy # osx copy to clipboard
+
+$ ENV_VAR=$(duse secret get 1 --plain) # set environment variable
+							  </pre>
+							</div>
+						</div>
+						<div class="row">
+							<p class="text-center">For further example</p>
+
+							<div class="col-lg-8 col-lg-offset-2 text-center">
+								<a href="https://github.com/duse-io/duse.rb#cli" class="btn btn-lg btn-success hidden-xs">
+									<i class="fa fa-github"></i> Check out the CLI Documentation
+								</a>
+								<a href="https://github.com/duse-io/duse.rb#cli" class="btn btn-lg btn-success visible-xs-inline">
+									<i class="fa fa-github"></i> CLI Documentation
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /container -->
+		
+		<footer class="footer">
+		  <div class="container">		  
+			<p class="text-muted pull-right"><a href="./impress.html" class="">Impress</a></p>
+			<p class="text-muted">© 2015 by duse.io</p>
+		  </div>
+		</footer>
+  
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<script src="js/scrolling-nav.js"></script>
+        <script>
+            $(function() {
+                $.material.init();
+
+				var $sidebar   = $("#sidebar"), 
+					$window    = $(window),
+					offset     = $sidebar.offset(),
+					topPadding = 30;	
+
+				$window.scroll(function() {
+					if ($window.scrollTop() > offset.top && $(window).width() >= 768) {
+						$sidebar.stop().animate({
+							marginTop: $window.scrollTop() - offset.top + topPadding
+						});
+					} else {
+						$sidebar.stop().animate({
+							marginTop: 0
+						});
+					}
+				});
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap Material</title>
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="css/material/roboto.css" rel="stylesheet">
+        <link href="css/material/material-fullpalette.css" rel="stylesheet">
+        <link href="css/material/ripples.css" rel="stylesheet">
+		<link href="css/scrolling-nav/scrolling-nav.css" rel="stylesheet">
+		<link href="css/duse/duse.css" rel="stylesheet">
+		<link href="css/font-awesome/font-awesome.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+	
+		<div class="navbar navbar-default">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><i class="mdi-action-lock" style="font-size:28px"></i><span> Duse.io</span></a>
+			</div>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">			
+				<form class="navbar-form navbar-left">
+					<input type="text" class="form-control col-lg-8" placeholder="Search">
+				</form>
+				<ul class="nav navbar-nav">
+					<li><a href="./account.html">Your Account</a></li>
+					<li><a href="./safe.html">Your Safe</a></li>
+				</ul>
+				<div class="nav navbar-nav navbar-right">				
+					<img src="http://lorempixel.com/255/255/people/5" alt="" class="profilpicture">
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="container account">
+			<div class="row row-space">
+				<div class="col-lg-12">
+					<h2>Safe</h2>
+					<hr>
+				</div>
+			</div>
+			<div class="row row-space">
+				<div class="col-lg-5">
+					<div id="safe" class="tree">
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="well bs-component">
+						<form class="form-horizontal">
+							<fieldset>
+								<legend>Content</legend>
+								<div class="form-group">
+									<label for="inputName" class="col-lg-2 control-label">Name</label>
+									<div class="col-lg-10">
+										<input class="form-control" id="inputName" value="GMail Password" type="text">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputPassword" class="col-lg-2 control-label">Email</label>
+									<div class="col-lg-10">
+										<div class="input-group">
+											<input class="form-control pwd" id="inputPassword" value="Password1234" type="password">
+											<span class="input-group-btn">
+												<button class="btn btn-flat btn-default reveal" type="button"><i class="mdi-image-remove-red-eye"></i></button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<footer class="footer">
+		  <div class="container">		  
+			<p class="text-muted pull-right"><a href="./impress.html" class="">Impress</a></p>
+			<p class="text-muted">© 2015 by duse.io</p>
+		  </div>
+		</footer>
+  
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<script src="js/scrolling-nav.js"></script>
+		<script src="js/treeview.js"></script>
+		<script src="js/reval.js"></script>
+        <script>
+            $(function() {
+                $.material.init();
+				$("#safe").treeview([
+				{title:'Private Folder',text:'Your private secure Folder',sub:'',type:'folder',icon:'',children:
+					[
+						{title:'Password',text:'Normal Password',sub:'',type:'password',icon:'communication-vpn-key'},
+						{title:'Password',text:'Normal Password',sub:'',type:'password',icon:'communication-vpn-key'}
+					]
+				},
+				{title:'Shared Folder',text:'Shared with Freddy, Josh and Jannis',sub:'Shared 05.05.05',type:'shared',icon:'',children:
+					[
+						{title:'Note',text:'Meeting summary',sub:'Created 05.05.05',type:'note',icon:'editor-insert-drive-file'},
+						{title:'Password',text:'Shared Password',sub:'Changed 05.05.05',type:'password',icon:'communication-vpn-key'},
+						{title:'Note',text:'Meeting summary',sub:'Changed 05.05.05',type:'note',icon:'editor-insert-drive-file'}
+					]
+				},
+				{title:'Shared Folder',text:'Shared with Group DHBW',sub:'Shared 05.05.05',type:'shared',icon:'',children:
+					[
+						{title:'File',text:'File: <i>Summery.pdf</i>',sub:'Created 05.05.05',type:'file',icon:'action-description'},
+						{title:'Note',text:'Meeting summary',sub:'Changed 05.05.05',type:'password',icon:'editor-insert-drive-file'},
+						{title:'Folder',text:'Shared Folder',sub:'Created 05.05.05',type:'folder',icon:'',children:
+							[
+							{title:'Note',text:'Meeting summary',sub:'Changed 05.05.05',type:'password',icon:'editor-insert-drive-file'},
+							{title:'Password',text:'Shared Password',sub:'Created 05.05.05',type:'password',icon:'communication-vpn-key'},
+							{title:'Note',text:'Meeting summary',sub:'Changed 05.05.05',type:'password',icon:'editor-insert-drive-file'}								
+							]
+						}
+					]
+				}
+				]);
+            });
+        </script>
+    </body>
+</html>

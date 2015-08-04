@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap Material</title>
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="css/material/roboto.css" rel="stylesheet">
+        <link href="css/material/material-fullpalette.css" rel="stylesheet">
+        <link href="css/material/ripples.css" rel="stylesheet">
+		<link href="css/scrolling-nav/scrolling-nav.css" rel="stylesheet">
+		<link href="css/duse/duse.css" rel="stylesheet">
+		<link href="css/font-awesome/font-awesome.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+	
+		<div class="navbar navbar-default">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><i class="mdi-action-lock" style="font-size:28px"></i><span> Duse.io</span></a>
+			</div>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">			
+				<form class="navbar-form navbar-left">
+					<input type="text" class="form-control col-lg-8" placeholder="Search">
+				</form>
+				<ul class="nav navbar-nav">
+					<li><a href="./account.html">Your Account</a></li>
+					<li><a href="./safe.html">Your Safe</a></li>
+				</ul>
+				<div class="nav navbar-nav navbar-right">				
+					<a href="./register.html" class="btn btn-warning btn-raised">Register</a>
+					<a href="./login.html" class="btn btn-success btn-raised">Login</a>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row row-space">
+				<div class="col-lg-6 col-lg-offset-3">
+					<div class="well bs-component">
+						<form class="form-horizontal">
+							<fieldset>
+								<legend>Login</legend>
+								<div class="form-group">
+									<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+									<div class="col-lg-10">
+										<input class="form-control" id="inputEmail" placeholder="Email" type="email">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputPassword" class="col-lg-2 control-label">Password</label>
+									<div class="col-lg-10">
+										<input class="form-control" id="inputPassword" placeholder="Password" type="password">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"> Remember me
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-lg-10 col-lg-offset-2">
+										<button class="btn btn-default">Cancel</button>
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<footer class="footer">
+		  <div class="container">		  
+			<p class="text-muted pull-right"><a href="./impress.html" class="">Impress</a></p>
+			<p class="text-muted">© 2015 by duse.io</p>
+		  </div>
+		</footer>
+  
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<script src="js/scrolling-nav.js"></script>
+        <script>
+            $(function() {
+                $.material.init();
+
+				var $sidebar   = $("#sidebar"), 
+					$window    = $(window),
+					offset     = $sidebar.offset(),
+					topPadding = 30;	
+
+				$window.scroll(function() {
+					console.log($window.scrollTop() +" - "+ offset.top);
+					if ($window.scrollTop() > offset.top) {
+						$sidebar.stop().animate({
+							marginTop: $window.scrollTop() - offset.top + topPadding
+						});
+					} else {
+						$sidebar.stop().animate({
+							marginTop: 0
+						});
+					}
+				});
+            });
+        </script>
+    </body>
+</html>
